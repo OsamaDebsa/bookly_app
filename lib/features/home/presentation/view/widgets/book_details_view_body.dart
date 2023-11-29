@@ -3,6 +3,7 @@ import 'package:bookly_app/features/home/presentation/view/widgets/book_rating.d
 import 'package:bookly_app/features/home/presentation/view/widgets/books_action.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_book_item.dart';
+import 'package:bookly_app/features/home/presentation/view/widgets/similar_books_list_view.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
@@ -18,7 +19,7 @@ class BookDetailsViewBody extends StatelessWidget {
           const CustomAppBarBookDetails(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: width * .19),
-            child: const FeaturedListViewItem(),
+            child: const CustomBookItem(),
           ),
           const SizedBox(height: 40),
           Text("Osama Debsa",
@@ -35,7 +36,17 @@ class BookDetailsViewBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
           ),
           const SizedBox(height: 33),
-          const BooksAction()
+          const BooksAction(),
+          const SizedBox(height: 33),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              "You can also like",
+              style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w700),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const SimilarBooksListView(),
         ],
       ),
     );
