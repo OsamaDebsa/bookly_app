@@ -10,6 +10,6 @@ import 'package:dartz/dartz.dart';
 // and  i will use it in case return type in failure case.
 
 abstract class HomeRepo {
-  Future<Either<Failure, List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks();
   Future<List<BookModel>> fetchFeaturedBooks();
 }
