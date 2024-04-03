@@ -11,7 +11,7 @@ class SimilarBooksListView extends StatelessWidget {
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
-          return const CustomBookItem();
+          return const CustomBookItem(imageUrl: 'https://media.licdn.com/dms/image/D4D03AQFkPQQkQGrUPA/profile-displayphoto-shrink_400_400/0/1687865415732?e=2147483647&v=beta&t=i9tdy6yfsFEifHuthEt6C--VShUCOrJ2PuNXSrFjemE',);
         },
       ),
     );
