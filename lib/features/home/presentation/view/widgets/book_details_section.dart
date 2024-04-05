@@ -1,10 +1,12 @@
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +16,18 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .19),
-          child: const CustomBookImage(
-              imageUrl:
-                  'https://media.licdn.com/dms/image/D4D03AQFkPQQkQGrUPA/profile-displayphoto-shrink_400_400/0/1687865415732?e=2147483647&v=beta&t=i9tdy6yfsFEifHuthEt6C--VShUCOrJ2PuNXSrFjemE'),
+          child: CustomBookImage(
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
         ),
         const SizedBox(height: 40),
-        Text("Osama Debsa",
+        Text(bookModel.volumeInfo.title!,
+            textAlign: TextAlign.center,
             style: Styles.textStyle30.copyWith(fontWeight: FontWeight.bold)),
         const SizedBox(height: 6),
         Opacity(
           opacity: .7,
-          child: Text("datadata",
+          child: Text(bookModel.volumeInfo.authors!.join(', '),
+              textAlign: TextAlign.center,
               style: Styles.textStyle18.copyWith(
                   fontWeight: FontWeight.w500, fontStyle: FontStyle.italic)),
         ),
