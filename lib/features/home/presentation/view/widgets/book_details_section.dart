@@ -1,6 +1,5 @@
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/data/models/book_model/book_model.dart';
-import 'package:bookly_app/features/home/presentation/view/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/view/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
@@ -32,9 +31,12 @@ class BookDetailsSection extends StatelessWidget {
                   fontWeight: FontWeight.w500, fontStyle: FontStyle.italic)),
         ),
         const SizedBox(height: 18),
-        const BookRating(
-          mainAxisAlignment: MainAxisAlignment.center,
-        ),
+        // const BookRating(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        // ),
+        Text("Published Date  ${bookModel.volumeInfo.publishedDate ?? ''}",
+            textAlign: TextAlign.center,
+            style: Styles.textStyle18.copyWith(fontWeight: FontWeight.normal)),
       ],
     );
   }
